@@ -9,21 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 
-namespace WindowsFormsApp1
+namespace LonelyWord
 {
     public partial class FormApresentacao : Form
     {
         public FormApresentacao()
         {
-            InitializeComponent();
-         
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            
-
+            InitializeComponent();         
         }
 
         private void FormApresentacao_Load(object sender, EventArgs e)

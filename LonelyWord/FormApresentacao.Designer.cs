@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace LonelyWord
 {
     partial class FormApresentacao
     {
@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApresentacao));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -73,7 +65,7 @@
             this.MaximizeBox = false;
             this.Name = "FormApresentacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Lonely Word";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormApresentacao_FormClosed);
             this.Load += new System.EventHandler(this.FormApresentacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
@@ -82,7 +74,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Button button1;
     }
