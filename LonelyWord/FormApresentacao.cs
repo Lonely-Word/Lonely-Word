@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,21 @@ namespace LonelyWord
 {
     public partial class FormApresentacao : Form
     {
-        public FormApresentacao()
+
+        int fase;
+        string video;
+
+        public FormApresentacao(string video, int fase)
         {
-            InitializeComponent();         
+            this.video = video;
+            this.fase = fase;
+            InitializeComponent();
         }
+        
 
         private void FormApresentacao_Load(object sender, EventArgs e)
-        {
-            axWindowsMediaPlayer1.URL = @"video.mp4";
+        {            
+            axWindowsMediaPlayer1.URL = Path.GetFullPath(this.video);
             axWindowsMediaPlayer1.uiMode = "None";
         }
 

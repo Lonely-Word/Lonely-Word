@@ -61,6 +61,16 @@ namespace LonelyWord.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] cutscene01 {
+            get {
+                object obj = ResourceManager.GetObject("cutscene01", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap menu_principal {
@@ -77,16 +87,6 @@ namespace LonelyWord.Properties {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
-        /// </summary>
-        internal static byte[] video {
-            get {
-                object obj = ResourceManager.GetObject("video", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }

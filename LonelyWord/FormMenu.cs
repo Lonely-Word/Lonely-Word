@@ -34,7 +34,7 @@ namespace LonelyWord
 
         private void btnJogar_Click(object sender, EventArgs e)
         {
-            FormApresentacao fApresentacao = new FormApresentacao();
+            FormApresentacao fApresentacao = new FormApresentacao(@"..\..\Resources\cutscene01.mp4", 1);
             fApresentacao.Show();
             this.Hide();
         }
