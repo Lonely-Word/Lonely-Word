@@ -29,10 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApresentacao));
+            this.btnAvancar = new System.Windows.Forms.Button();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnAvancar
+            // 
+            this.btnAvancar.BackColor = System.Drawing.Color.Black;
+            this.btnAvancar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAvancar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAvancar.FlatAppearance.BorderSize = 2;
+            this.btnAvancar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Teal;
+            this.btnAvancar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnAvancar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnAvancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvancar.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.btnAvancar.ForeColor = System.Drawing.Color.White;
+            this.btnAvancar.Location = new System.Drawing.Point(817, 647);
+            this.btnAvancar.Name = "btnAvancar";
+            this.btnAvancar.Size = new System.Drawing.Size(179, 70);
+            this.btnAvancar.TabIndex = 1;
+            this.btnAvancar.Text = "A V A N Ç A R";
+            this.btnAvancar.UseVisualStyleBackColor = false;
+            this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
             // axWindowsMediaPlayer1
             // 
@@ -44,22 +64,12 @@
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1008, 729);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(856, 655);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Avançar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormApresentacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -75,6 +85,6 @@
 
         #endregion
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAvancar;
     }
 }

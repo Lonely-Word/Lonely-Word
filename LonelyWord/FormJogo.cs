@@ -12,15 +12,39 @@ namespace LonelyWord
 {
     public partial class FormJogo : Form
     {
-        public FormJogo()
+        int fase;
+
+        public FormJogo(int fase)
         {
-            InitializeComponent();
+            this.fase = fase;
+            InitializeComponent();           
         }
+
         private void FormJogo_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormMenu fMenu = new FormMenu();
             fMenu.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vidadois_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void check_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

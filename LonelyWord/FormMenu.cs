@@ -43,5 +43,10 @@ namespace LonelyWord
         {
             Application.Exit();
         }
+
+        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
