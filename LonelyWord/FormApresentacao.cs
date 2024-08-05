@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,9 +40,10 @@ namespace LonelyWord
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAvancar_Click(object sender, EventArgs e)
         {
-            FormJogo fJogo = new FormJogo();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            FormJogo fJogo = new FormJogo(1);
             fJogo.Show();
             this.Hide();
         }

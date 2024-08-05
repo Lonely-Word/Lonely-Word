@@ -70,7 +70,7 @@
             this.btnTutorial.Name = "btnTutorial";
             this.btnTutorial.Size = new System.Drawing.Size(300, 70);
             this.btnTutorial.TabIndex = 1;
-            this.btnTutorial.Text = "TUTORIAL";
+            this.btnTutorial.Text = "T U T O R I A L";
             this.btnTutorial.UseVisualStyleBackColor = false;
             this.btnTutorial.Click += new System.EventHandler(this.btnTutorial_Click);
             // 
@@ -90,7 +90,7 @@
             this.btnCreditos.Name = "btnCreditos";
             this.btnCreditos.Size = new System.Drawing.Size(300, 70);
             this.btnCreditos.TabIndex = 2;
-            this.btnCreditos.Text = "CRÉDITOS";
+            this.btnCreditos.Text = "C R É D I T O S";
             this.btnCreditos.UseVisualStyleBackColor = false;
             this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
             // 
@@ -110,7 +110,7 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(300, 70);
             this.btnSair.TabIndex = 3;
-            this.btnSair.Text = "SAIR";
+            this.btnSair.Text = "S A I R";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -131,6 +131,7 @@
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
             this.ResumeLayout(false);
 
         }

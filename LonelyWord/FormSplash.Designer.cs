@@ -61,6 +61,7 @@
             this.Name = "FormSplashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
+            this.Load += new System.EventHandler(this.FormSplashScreen_Load);
             this.ResumeLayout(false);
 
         }

@@ -30,5 +30,10 @@ namespace LonelyWord
                 this.Hide();
             }
         }
+
+        private void FormSplashScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
