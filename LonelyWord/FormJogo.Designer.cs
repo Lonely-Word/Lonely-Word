@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.vida3 = new System.Windows.Forms.PictureBox();
-            this.Capitulo = new System.Windows.Forms.Label();
+            this.capitulo = new System.Windows.Forms.Label();
             this.tema = new System.Windows.Forms.Label();
             this.vida2 = new System.Windows.Forms.PictureBox();
             this.vida1 = new System.Windows.Forms.PictureBox();
@@ -53,17 +53,17 @@
             this.vida3.TabIndex = 1;
             this.vida3.TabStop = false;
             // 
-            // Capitulo
+            // capitulo
             // 
-            this.Capitulo.AutoSize = true;
-            this.Capitulo.BackColor = System.Drawing.Color.Transparent;
-            this.Capitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Capitulo.ForeColor = System.Drawing.SystemColors.Control;
-            this.Capitulo.Location = new System.Drawing.Point(10, 12);
-            this.Capitulo.Name = "Capitulo";
-            this.Capitulo.Size = new System.Drawing.Size(192, 47);
-            this.Capitulo.TabIndex = 2;
-            this.Capitulo.Text = "Capítulo X";
+            this.capitulo.AutoSize = true;
+            this.capitulo.BackColor = System.Drawing.Color.Transparent;
+            this.capitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.capitulo.ForeColor = System.Drawing.SystemColors.Control;
+            this.capitulo.Location = new System.Drawing.Point(10, 12);
+            this.capitulo.Name = "capitulo";
+            this.capitulo.Size = new System.Drawing.Size(192, 47);
+            this.capitulo.TabIndex = 2;
+            this.capitulo.Text = "Capítulo X";
             // 
             // tema
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.vida1);
             this.Controls.Add(this.vida2);
             this.Controls.Add(this.tema);
-            this.Controls.Add(this.Capitulo);
+            this.Controls.Add(this.capitulo);
             this.Controls.Add(this.vida3);
             this.Controls.Add(this.acertos);
             this.DoubleBuffered = true;
@@ -222,7 +222,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox vida3;
-        private System.Windows.Forms.Label Capitulo;
+        private System.Windows.Forms.Label capitulo;
         private System.Windows.Forms.Label tema;
         private System.Windows.Forms.PictureBox vida2;
         private System.Windows.Forms.PictureBox vida1;

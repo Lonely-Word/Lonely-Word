@@ -18,7 +18,7 @@ namespace LonelyWord
         public Palavra(string palavra, string dica, string direcao, int colIni, int colFim, int rowIni, int rowFim)
         {
             this.palavra = palavra;
-            this.direcao = dica;
+            this.dica= dica;
             this.direcao = direcao;
             this.colIni = colIni;
             this.colFim = colFim;

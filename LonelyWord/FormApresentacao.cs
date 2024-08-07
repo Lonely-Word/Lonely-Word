@@ -43,7 +43,7 @@ namespace LonelyWord
         private void btnAvancar_Click(object sender, EventArgs e)
         {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            FormJogo fJogo = new FormJogo(1);
+            FormJogo fJogo = new FormJogo(this.fase);
             fJogo.Show();
             this.Hide();
         }

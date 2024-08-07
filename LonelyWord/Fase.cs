@@ -13,6 +13,11 @@ namespace LonelyWord
         public string resumo;
         public List<Palavra> palavras;
 
+        public Fase()
+        {
+            
+        }
+
         public Fase(int fase, string tema, string resumo, List<Palavra> palavras)
         {
             this.fase = fase;
