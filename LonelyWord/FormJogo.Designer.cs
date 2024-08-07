@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resposta = new System.Windows.Forms.TextBox();
             this.vida3 = new System.Windows.Forms.PictureBox();
             this.Capitulo = new System.Windows.Forms.Label();
             this.tema = new System.Windows.Forms.Label();
             this.vida2 = new System.Windows.Forms.PictureBox();
             this.vida1 = new System.Windows.Forms.PictureBox();
             this.acertos = new System.Windows.Forms.Label();
+            this.palavrasCruzadas = new System.Windows.Forms.TableLayoutPanel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.digite = new System.Windows.Forms.Label();
-            this.btnVerificar = new System.Windows.Forms.Button();
-            this.cacaPalavras = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.vida3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // resposta
-            // 
-            this.resposta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resposta.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.resposta.Location = new System.Drawing.Point(709, 146);
-            this.resposta.Name = "resposta";
-            this.resposta.Size = new System.Drawing.Size(238, 36);
-            this.resposta.TabIndex = 5;
             // 
             // vida3
             // 
@@ -75,7 +64,6 @@
             this.Capitulo.Size = new System.Drawing.Size(192, 47);
             this.Capitulo.TabIndex = 2;
             this.Capitulo.Text = "Capítulo X";
-            this.Capitulo.Click += new System.EventHandler(this.label1_Click);
             // 
             // tema
             // 
@@ -99,7 +87,6 @@
             this.vida2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.vida2.TabIndex = 6;
             this.vida2.TabStop = false;
-            this.vida2.Click += new System.EventHandler(this.vidadois_Click);
             // 
             // vida1
             // 
@@ -124,96 +111,82 @@
             this.acertos.TabIndex = 9;
             this.acertos.Text = "Acertos: 1 de 10";
             // 
+            // palavrasCruzadas
+            // 
+            this.palavrasCruzadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.palavrasCruzadas.BackColor = System.Drawing.Color.Transparent;
+            this.palavrasCruzadas.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.palavrasCruzadas.ColumnCount = 20;
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.palavrasCruzadas.Location = new System.Drawing.Point(18, 126);
+            this.palavrasCruzadas.Name = "palavrasCruzadas";
+            this.palavrasCruzadas.RowCount = 20;
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.palavrasCruzadas.Size = new System.Drawing.Size(685, 591);
+            this.palavrasCruzadas.TabIndex = 16;
+            // 
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.listBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(709, 203);
+            this.listBox1.Location = new System.Drawing.Point(709, 158);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(283, 514);
+            this.listBox1.Size = new System.Drawing.Size(283, 559);
             this.listBox1.TabIndex = 13;
             // 
             // digite
             // 
             this.digite.AutoSize = true;
             this.digite.BackColor = System.Drawing.SystemColors.Window;
-            this.digite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.digite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.digite.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.digite.Location = new System.Drawing.Point(709, 126);
             this.digite.Name = "digite";
-            this.digite.Size = new System.Drawing.Size(199, 17);
+            this.digite.Size = new System.Drawing.Size(57, 21);
             this.digite.TabIndex = 14;
-            this.digite.Text = "Digite aqui a palavra encontrada";
-            this.digite.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // btnVerificar
-            // 
-            this.btnVerificar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVerificar.BackgroundImage = global::LonelyWord.Properties.Resources.check;
-            this.btnVerificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVerificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerificar.Location = new System.Drawing.Point(953, 145);
-            this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(39, 39);
-            this.btnVerificar.TabIndex = 15;
-            this.btnVerificar.UseVisualStyleBackColor = false;
-            // 
-            // cacaPalavras
-            // 
-            this.cacaPalavras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cacaPalavras.BackColor = System.Drawing.Color.Transparent;
-            this.cacaPalavras.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.cacaPalavras.ColumnCount = 20;
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.Enabled = false;
-            this.cacaPalavras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cacaPalavras.Location = new System.Drawing.Point(18, 126);
-            this.cacaPalavras.Name = "cacaPalavras";
-            this.cacaPalavras.RowCount = 20;
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.cacaPalavras.Size = new System.Drawing.Size(685, 591);
-            this.cacaPalavras.TabIndex = 16;
+            this.digite.Text = "DICAS:";
             // 
             // FormJogo
             // 
@@ -223,13 +196,11 @@
             this.BackgroundImage = global::LonelyWord.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.cacaPalavras);
-            this.Controls.Add(this.btnVerificar);
+            this.Controls.Add(this.palavrasCruzadas);
             this.Controls.Add(this.digite);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.vida1);
             this.Controls.Add(this.vida2);
-            this.Controls.Add(this.resposta);
             this.Controls.Add(this.tema);
             this.Controls.Add(this.Capitulo);
             this.Controls.Add(this.vida3);
@@ -250,16 +221,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox resposta;
         private System.Windows.Forms.PictureBox vida3;
         private System.Windows.Forms.Label Capitulo;
         private System.Windows.Forms.Label tema;
         private System.Windows.Forms.PictureBox vida2;
         private System.Windows.Forms.PictureBox vida1;
         private System.Windows.Forms.Label acertos;
+        private System.Windows.Forms.TableLayoutPanel palavrasCruzadas;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label digite;
-        private System.Windows.Forms.Button btnVerificar;
-        private System.Windows.Forms.TableLayoutPanel cacaPalavras;
     }
 }

@@ -58,7 +58,10 @@
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSplashScreen";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
             this.Load += new System.EventHandler(this.FormSplashScreen_Load);

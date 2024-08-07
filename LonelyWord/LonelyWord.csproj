@@ -36,6 +36,9 @@
   <PropertyGroup>
     <StartupObject>LoneyWord.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lonelyword.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,6 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fase.cs" />
+    <Compile Include="Palavra.cs" />
+    <Compile Include="FormPalavra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPalavra.Designer.cs">
+      <DependentUpon>FormPalavra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTutorial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormPalavra.resx">
+      <DependentUpon>FormPalavra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTutorial.resx">
       <DependentUpon>FormTutorial.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\interrogação.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lonelyword.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
