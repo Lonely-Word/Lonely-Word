@@ -25,12 +25,15 @@ namespace LonelyWord
             this.fase = fase;
             InitializeComponent();
         }
-        
 
         private void FormApresentacao_Load(object sender, EventArgs e)
-        {            
+        {
             axWindowsMediaPlayer1.URL = Path.GetFullPath(this.video);
             axWindowsMediaPlayer1.uiMode = "None";
+            if (this.fase <= 5)
+                btnAvancar.Text = "A V A N Ç A R";
+            else
+                btnAvancar.Text = "F I M!";
         }
 
         private void FormApresentacao_FormClosed(object sender, FormClosedEventArgs e)
@@ -42,10 +45,19 @@ namespace LonelyWord
 
         private void btnAvancar_Click(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
-            FormJogo fJogo = new FormJogo(this.fase);
-            fJogo.Show();
-            this.Hide();
+            if (this.fase <=5 )
+            {            
+                axWindowsMediaPlayer1.Ctlcontrols.stop();
+                FormJogo fJogo = new FormJogo(this.fase);
+                fJogo.Show();
+                this.Hide();
+            }
+            else 
+            {
+                FormMenu fMenu = new FormMenu();
+                fMenu.Show();
+                this.Hide();
+            }
         }
     }
 }

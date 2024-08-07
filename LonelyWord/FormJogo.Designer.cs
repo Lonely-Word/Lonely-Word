@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJogo));
             this.vida3 = new System.Windows.Forms.PictureBox();
             this.capitulo = new System.Windows.Forms.Label();
             this.tema = new System.Windows.Forms.Label();
             this.vida2 = new System.Windows.Forms.PictureBox();
             this.vida1 = new System.Windows.Forms.PictureBox();
-            this.acertos = new System.Windows.Forms.Label();
             this.palavrasCruzadas = new System.Windows.Forms.TableLayoutPanel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.digite = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dica5 = new System.Windows.Forms.Label();
+            this.dica4 = new System.Windows.Forms.Label();
+            this.dica3 = new System.Windows.Forms.Label();
+            this.dica2 = new System.Windows.Forms.Label();
+            this.dica1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vida3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // vida3
@@ -99,24 +105,11 @@
             this.vida1.TabIndex = 7;
             this.vida1.TabStop = false;
             // 
-            // acertos
-            // 
-            this.acertos.AutoSize = true;
-            this.acertos.BackColor = System.Drawing.Color.Transparent;
-            this.acertos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acertos.ForeColor = System.Drawing.SystemColors.Control;
-            this.acertos.Location = new System.Drawing.Point(850, 51);
-            this.acertos.Name = "acertos";
-            this.acertos.Size = new System.Drawing.Size(145, 25);
-            this.acertos.TabIndex = 9;
-            this.acertos.Text = "Acertos: 1 de 10";
-            // 
             // palavrasCruzadas
             // 
             this.palavrasCruzadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.palavrasCruzadas.BackColor = System.Drawing.Color.Transparent;
-            this.palavrasCruzadas.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.palavrasCruzadas.ColumnCount = 20;
             this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.palavrasCruzadas.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
@@ -165,17 +158,6 @@
             this.palavrasCruzadas.Size = new System.Drawing.Size(685, 591);
             this.palavrasCruzadas.TabIndex = 16;
             // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(709, 158);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(283, 559);
-            this.listBox1.TabIndex = 13;
-            // 
             // digite
             // 
             this.digite.AutoSize = true;
@@ -188,6 +170,92 @@
             this.digite.TabIndex = 14;
             this.digite.Text = "DICAS:";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.dica5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.dica4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dica3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dica2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dica1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(709, 150);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(287, 567);
+            this.tableLayoutPanel1.TabIndex = 17;
+            // 
+            // dica5
+            // 
+            this.dica5.AutoSize = true;
+            this.dica5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dica5.Location = new System.Drawing.Point(3, 148);
+            this.dica5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica5.Name = "dica5";
+            this.dica5.Size = new System.Drawing.Size(281, 407);
+            this.dica5.TabIndex = 4;
+            this.dica5.Text = "label1";
+            // 
+            // dica4
+            // 
+            this.dica4.AutoSize = true;
+            this.dica4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dica4.Location = new System.Drawing.Point(3, 111);
+            this.dica4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica4.Name = "dica4";
+            this.dica4.Size = new System.Drawing.Size(281, 25);
+            this.dica4.TabIndex = 3;
+            this.dica4.Text = "label1";
+            // 
+            // dica3
+            // 
+            this.dica3.AutoSize = true;
+            this.dica3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dica3.Location = new System.Drawing.Point(3, 74);
+            this.dica3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica3.Name = "dica3";
+            this.dica3.Size = new System.Drawing.Size(281, 25);
+            this.dica3.TabIndex = 2;
+            this.dica3.Text = "label1";
+            // 
+            // dica2
+            // 
+            this.dica2.AutoSize = true;
+            this.dica2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dica2.Location = new System.Drawing.Point(3, 37);
+            this.dica2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica2.Name = "dica2";
+            this.dica2.Size = new System.Drawing.Size(281, 25);
+            this.dica2.TabIndex = 1;
+            this.dica2.Text = "label1";
+            // 
+            // dica1
+            // 
+            this.dica1.AutoSize = true;
+            this.dica1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dica1.Location = new System.Drawing.Point(3, 0);
+            this.dica1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica1.Name = "dica1";
+            this.dica1.Size = new System.Drawing.Size(281, 25);
+            this.dica1.TabIndex = 0;
+            this.dica1.Text = "label1";
+            // 
             // FormJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,16 +264,16 @@
             this.BackgroundImage = global::LonelyWord.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.palavrasCruzadas);
             this.Controls.Add(this.digite);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.vida1);
             this.Controls.Add(this.vida2);
             this.Controls.Add(this.tema);
             this.Controls.Add(this.capitulo);
             this.Controls.Add(this.vida3);
-            this.Controls.Add(this.acertos);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormJogo";
@@ -215,6 +283,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vida3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,9 +296,13 @@
         private System.Windows.Forms.Label tema;
         private System.Windows.Forms.PictureBox vida2;
         private System.Windows.Forms.PictureBox vida1;
-        private System.Windows.Forms.Label acertos;
         private System.Windows.Forms.TableLayoutPanel palavrasCruzadas;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label digite;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label dica1;
+        private System.Windows.Forms.Label dica5;
+        private System.Windows.Forms.Label dica4;
+        private System.Windows.Forms.Label dica3;
+        private System.Windows.Forms.Label dica2;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.btnJogar = new System.Windows.Forms.Button();
             this.btnTutorial = new System.Windows.Forms.Button();
             this.btnCreditos = new System.Windows.Forms.Button();
@@ -126,6 +127,7 @@
             this.Controls.Add(this.btnTutorial);
             this.Controls.Add(this.btnJogar);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormMenu";

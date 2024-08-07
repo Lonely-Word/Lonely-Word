@@ -188,6 +188,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lonelyword.ico" />
+    <None Include="Resources\tutorial06.png" />
+    <None Include="Resources\tutorial05.png" />
+    <None Include="Resources\tutorial04.png" />
+    <None Include="Resources\tutorial03.png" />
+    <None Include="Resources\tutorial02.png" />
+    <None Include="Resources\tutorial01.png" />
+    <None Include="Resources\creditos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,5 +23,12 @@ namespace LonelyWord
             fMenu.Show();
             this.Hide();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormMenu fMenu = new FormMenu();
+            fMenu.Show();
+            this.Hide();
+        }
     }
 }

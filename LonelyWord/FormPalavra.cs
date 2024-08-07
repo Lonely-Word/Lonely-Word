@@ -21,5 +21,10 @@ namespace LonelyWord
         {
             return textBox1.Text;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

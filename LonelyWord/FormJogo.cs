@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -15,7 +16,47 @@ namespace LonelyWord
 { 
     public partial class FormJogo : Form
     {
-        int fase;  
+        int fase;
+        int tentativas = 3;
+        int acertos = 0;
+
+        private static string RemoveAcentos(string text)
+        {
+            StringBuilder sbReturn = new StringBuilder();
+            var arrayText = text.Normalize(NormalizationForm.FormD).ToCharArray();
+            foreach (char letter in arrayText)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(letter) != UnicodeCategory.NonSpacingMark)
+                    sbReturn.Append(letter);
+            }
+            return sbReturn.ToString();
+        }
+
+        private void ShowProximaFase()
+        {
+            string cutscene = "";
+            switch (this.fase + 1)
+            {
+                case 2:
+                    cutscene = @"..\..\Resources\cutscene02.mp4";
+                    break;
+                case 3:
+                    cutscene = @"..\..\Resources\cutscene03.mp4";
+                    break;
+                case 4:
+                    cutscene = @"..\..\Resources\cutscene04.mp4";
+                    break;
+                case 5:
+                    cutscene = @"..\..\Resources\cutscene05.mp4";
+                    break;
+                case 6:
+                    cutscene = @"..\..\Resources\cutscene06.mp4";
+                    break;
+            }
+            FormApresentacao fApresentacao = new FormApresentacao(cutscene, this.fase+1);
+            fApresentacao.Show();
+            this.Hide();
+        }
 
         private void letraClick(object sender, EventArgs e)
         {
@@ -26,9 +67,59 @@ namespace LonelyWord
                 FormPalavra pDialog = new FormPalavra();
                 if (pDialog.ShowDialog(this) == DialogResult.OK)
                 { 
-                    if (palavra.palavra == pDialog.getPalavra())
+                    if (palavra.palavra.ToUpper() == RemoveAcentos(pDialog.getPalavra().ToUpper()))
                     {
                         MessageBox.Show("Você acertou!");
+                        int posLetra = 0;
+                        for (int col = palavra.colIni; col <= palavra.colFim; col++)
+                        {
+                            for (int row = palavra.rowIni; row <= palavra.rowFim; row++)
+                            {
+                                var ctrl = palavrasCruzadas.GetControlFromPosition(col, row);
+                                if (ctrl != null)
+                                    ctrl.Text = palavra.palavra.Substring(posLetra, 1);
+                                posLetra++;                                
+                            }
+                        }
+                        acertos++;
+                        if (acertos == 5)
+                        {
+                            MessageBox.Show("Parabéns você revelou todas as palavras! Vamos para a próxima fase!");
+                            ShowProximaFase();
+                        }
+                    } else
+                    {                        
+                        tentativas--;
+                        switch (tentativas)
+                        {
+                            case 0:
+                                vida1.Visible = false;
+                                vida2.Visible = false;
+                                vida3.Visible = false;
+                                MessageBox.Show("Não foi desta vez, reveja a história de seu Eduardo e tente novamente!");
+                                FormMenu fMenu = new FormMenu();
+                                fMenu.Show();
+                                this.Hide();
+                                break;
+                            case 1:
+                                vida1.Visible = false;
+                                vida2.Visible = false;
+                                vida3.Visible = true;
+                                MessageBox.Show("Ops, errou!");
+                                break;
+                            case 2:
+                                vida1.Visible = false;
+                                vida2.Visible = true;
+                                vida3.Visible = true;
+                                MessageBox.Show("Ops, errou!");
+                                break;
+                            default:
+                                vida1.Visible = true;
+                                vida2.Visible = true;
+                                vida3.Visible = true;
+                                break;
+
+                        }
                     }                
                 }
                 pDialog.Dispose();
@@ -37,6 +128,9 @@ namespace LonelyWord
 
         private void InitGame()
         {
+            tentativas = 3;
+            acertos = 0;
+
             List<Palavra> PalavrasFase = new List<Palavra>();
             Fase fase = new Fase();
             switch (this.fase)
@@ -48,47 +142,46 @@ namespace LonelyWord
                     PalavrasFase.Add(new Palavra("ABANDONO", "Ato ou efeito de largar, de sair sem a intenção de voltar.", "Horizontal", 6, 13, 8, 8));
                     PalavrasFase.Add(new Palavra("MELANCOLIA", "Estado de grande tristeza e desencanto gera.", "Horizontal", 5, 14, 10, 10));
                     PalavrasFase.Add(new Palavra("IDOSO", "Que ou quem tem muitos anos de vida.", "Horizontal", 7, 11, 14, 14));
-                    fase = new Fase(1, "Consequencias do ABANDONO: solidão, doenças, sindromes.", "Consequencias do ABANDONO: solidão, doenças, sindromes.", PalavrasFase);
+                    fase = new Fase(1, "Abandono: Solidão, doenças, síndromes.", "Abandono: Solidão, doenças, síndromes.", PalavrasFase);
                     break;
                 case 2:
                     /* Fase 2 */                    
-                    PalavrasFase.Add(new Palavra("FILHOS", "", "Horizontal", 5, 10, 15, 15));
-                    PalavrasFase.Add(new Palavra("ESPOSA", "", "Vertical", 10, 10, 11, 16));
-                    PalavrasFase.Add(new Palavra("NETOS", "", "Horizontal", 9, 13, 11, 11));
-                    PalavrasFase.Add(new Palavra("FAMILIA", "", "Horizontal", 8, 14, 6, 6));
-                    PalavrasFase.Add(new Palavra("CUIDADOS", "", "Vertical", 13, 13, 4, 11));
-                    fase = new Fase(2, "Estrutura familiar, direitos e deveres, filhos, netos, cuidados.", "Estrutura familiar, direitos e deveres, filhos, netos, cuidados.", PalavrasFase);                    
+                    PalavrasFase.Add(new Palavra("FILHOS", "Descendentes diretos.", "Horizontal", 5, 10, 15, 15));
+                    PalavrasFase.Add(new Palavra("ESPOSA", "Mulher, em relação à pessoa a quem está matrimonialmente vinculada.", "Vertical", 10, 10, 11, 16));
+                    PalavrasFase.Add(new Palavra("NETOS", "Descendentes de segundo nível.", "Horizontal", 9, 13, 11, 11));
+                    PalavrasFase.Add(new Palavra("FAMILIA", "O conjunto de parentes de uma pessoa.", "Horizontal", 8, 14, 6, 6));
+                    PalavrasFase.Add(new Palavra("CUIDADOS", "Que foi ou é objeto de tratamento especial, zelo, bom trato.", "Vertical", 13, 13, 4, 11));
+                    fase = new Fase(2, "Estrutura familiar: Direitos e deveres.", "Estrutura familiar: Direitos e deveres.", PalavrasFase);                    
                     break;
                 case 3:
                     /* Fase 3 */                    
-                    PalavrasFase.Add(new Palavra("SAUDE", "", "Horizontal", 8, 12, 18, 18));
-                    PalavrasFase.Add(new Palavra("APOSENTADORIA", "", "Vertical", 7, 7, 0, 12));
-                    PalavrasFase.Add(new Palavra("REMEDIOS", "", "Vertical", 14, 14, 8, 15));
-                    PalavrasFase.Add(new Palavra("PRIORIDADE", "", "Horizontal", 5, 14, 11, 11));
-                    PalavrasFase.Add(new Palavra("GRATUIDADE", "", "Vertical", 12, 12, 9, 18));
-                    fase = new Fase(3, "Direitos a transporte público, saúde, vagas preferenciais remédios fisioterapias.", "Direitos a transporte público, saúde, vagas preferenciais remédios fisioterapias.", PalavrasFase);
+                    PalavrasFase.Add(new Palavra("SAUDE", "Voto que se faz a alguém que espirra.", "Horizontal", 8, 12, 18, 18));
+                    PalavrasFase.Add(new Palavra("APOSENTADORIA", "A remuneração recebida mensalmente pelo trabalhador aposentado.", "Vertical", 7, 7, 0, 12));
+                    PalavrasFase.Add(new Palavra("REMEDIOS", "Substância ou recurso utilizado para combater uma dor, uma doença.", "Vertical", 14, 14, 8, 15));
+                    PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros.", "Horizontal", 5, 14, 11, 11));
+                    PalavrasFase.Add(new Palavra("GRATUIDADE", "Condição ou estado do que é oferecido de graça.", "Vertical", 12, 12, 9, 18));
+                    fase = new Fase(3, "Desafios da 3° idade: Qualidade de vida.", "Desafios da 3° idade: Qualidade de vida.", PalavrasFase);
                     break;
                 case 4:
                     /* Fase 4 */                     
-                    PalavrasFase.Add(new Palavra("MULTIRAO", "", "Horizontal", 5, 12, 13, 13));
-                    PalavrasFase.Add(new Palavra("AMIZADE", "", "Horizontal", 5, 11, 4, 4));
-                    PalavrasFase.Add(new Palavra("SUPERACAO", "", "Vertical", 11, 11, 8, 16));
-                    PalavrasFase.Add(new Palavra("ASSISTENCIA", "", "Vertical", 9, 9, 4, 14));
-                    PalavrasFase.Add(new Palavra("AJUDA", "", "Vertical", 6, 6, 11, 15));
-                    fase = new Fase(4, "Velhice não é apenas solidão outros prazeres surgem além das limitações físicas da idade e saúde: respeito, amizade, superação.", "Velhice não é apenas solidão outros prazeres surgem além das limitações físicas da idade e saúde: respeito, amizade, superação.", PalavrasFase);                    
+                    PalavrasFase.Add(new Palavra("MULTIRAO", "Mobilização coletiva de pessoas que, realizam um trabalho em conjunto para alcançar um objetivo comum.", "Horizontal", 5, 12, 13, 13));
+                    PalavrasFase.Add(new Palavra("AMIZADE", "Sentimento de afeto, carinho e estima entre pessoas.", "Horizontal", 5, 11, 4, 4));
+                    PalavrasFase.Add(new Palavra("SUPERACAO", "A ação de vencer desafios, ultrapassar obstáculos e superar dificuldades.", "Vertical", 11, 11, 8, 16));
+                    PalavrasFase.Add(new Palavra("ASSISTENCIA", "Ação de ajudar, apoiar ou fornecer auxílio a alguém.", "Vertical", 9, 9, 4, 14));
+                    PalavrasFase.Add(new Palavra("AJUDA", "Ação de prestar auxilio a alguém.", "Vertical", 6, 6, 11, 15));
+                    fase = new Fase(4, "Quebrando barreiras: Amizade, superação e respeito.", "Quebrando barreiras: Amizade, superação e respeito.", PalavrasFase);                    
                     break;
                 case 5:
                     /* Fase 5 */
                     PalavrasFase.Add(new Palavra("IDOSO", "Que ou quem tem muitos anos de vida.", "Horizontal", 9, 13, 8, 8));
-                    PalavrasFase.Add(new Palavra("FAMILIA", "", "Vertical", 14, 14, 10, 16));
-                    PalavrasFase.Add(new Palavra("SUPERACAO", "", "Horizontal", 7, 15, 11, 11));
-                    PalavrasFase.Add(new Palavra("CUIDADO", "", "Horizontal", 4, 10, 5, 5));
-                    PalavrasFase.Add(new Palavra("PRIORIDADE", "", "Vertical", 10, 10, 2, 11));
-                    fase = new Fase(5, "Valorize seu idoso, amanhã você será o idoso.", "Valorize seu idoso, amanhã você será o idoso.", PalavrasFase);
+                    PalavrasFase.Add(new Palavra("FAMILIA", "O conjunto de parentes de uma pessoa.", "Vertical", 14, 14, 10, 16));
+                    PalavrasFase.Add(new Palavra("SUPERACAO", "A ação de vencer desafios, ultrapassar obstáculos e superar dificuldades.", "Horizontal", 7, 15, 11, 11));
+                    PalavrasFase.Add(new Palavra("CUIDADO", "Que foi ou é objeto de tratamento especial, zelo, bom trato.", "Horizontal", 4, 10, 5, 5));
+                    PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros.", "Vertical", 10, 10, 2, 11));
+                    fase = new Fase(5, "Valorize seu idoso, amanhã será você o idoso.", "Valorize seu idoso, amanhã será você o idoso.", PalavrasFase);
                     break;                                                        
             }
 
-            acertos.Text = "Acertos: 0 de 5";
             capitulo.Text = "Capítulo " + this.fase.ToString();
             tema.Text = fase.tema;
 
@@ -99,6 +192,24 @@ namespace LonelyWord
             {
                 numPalavra++;
                 int posLetra = 0;
+                switch(numPalavra)
+                {
+                    case 1:
+                        dica1.Text = numPalavra.ToString() + ": " + palavra.dica;
+                        break;
+                    case 2:
+                        dica2.Text = numPalavra.ToString() + ": " + palavra.dica;
+                        break;
+                    case 3:
+                        dica3.Text = numPalavra.ToString() + ": " + palavra.dica;
+                        break;
+                    case 4:
+                        dica4.Text = numPalavra.ToString() + ": " + palavra.dica;
+                        break;
+                    case 5:
+                        dica5.Text = numPalavra.ToString() + ": " + palavra.dica;
+                        break;
+                }
                 for (int col = palavra.colIni; col <= palavra.colFim; col++)
                 {
                     for (int row = palavra.rowIni; row <= palavra.rowFim; row++)
@@ -106,11 +217,8 @@ namespace LonelyWord
                         letras[numLetras] = new Label();
                         if (posLetra == 0)
                         {
-                            letras[numLetras].Text = numPalavra.ToString();
-                            listBox1.Items.Add(numPalavra.ToString() + ": " + palavra.dica);
+                            letras[numLetras].Text = numPalavra.ToString();                            
                         }
-                        //if (palavra.palavra.Count() > posLetra)
-                        //letras[numLetras].Text = palavra.palavra.Substring(posLetra, 1);
                         posLetra++;
                         letras[numLetras].BackColor = Color.Gray;
                         letras[numLetras].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
