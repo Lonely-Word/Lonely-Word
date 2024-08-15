@@ -48,5 +48,10 @@ namespace LonelyWord
         {
             Application.Exit();
         }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
