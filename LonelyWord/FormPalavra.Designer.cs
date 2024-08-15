@@ -95,6 +95,7 @@
             this.btnConfirmar.TabIndex = 5;
             this.btnConfirmar.Text = "CONFIRMAR";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // FormPalavra
             // 

@@ -54,6 +54,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fase.cs" />
+    <Compile Include="FormErro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormErro.Designer.cs">
+      <DependentUpon>FormErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAcerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAcerto.Designer.cs">
+      <DependentUpon>FormAcerto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Palavra.cs" />
     <Compile Include="FormPalavra.cs">
       <SubType>Form</SubType>
@@ -99,6 +111,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAcerto.resx">
+      <DependentUpon>FormAcerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormErro.resx">
+      <DependentUpon>FormErro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPalavra.resx">
       <DependentUpon>FormPalavra.cs</DependentUpon>
     </EmbeddedResource>

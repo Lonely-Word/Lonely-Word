@@ -54,6 +54,7 @@ namespace LonelyWord
             }
             else 
             {
+                axWindowsMediaPlayer1.Ctlcontrols.stop();
                 FormMenu fMenu = new FormMenu();
                 fMenu.Show();
                 this.Hide();

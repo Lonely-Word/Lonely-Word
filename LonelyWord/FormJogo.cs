@@ -69,23 +69,26 @@ namespace LonelyWord
                 { 
                     if (palavra.palavra.ToUpper() == RemoveAcentos(pDialog.getPalavra().ToUpper()))
                     {
-                        MessageBox.Show("Você acertou!");
-                        int posLetra = 0;
-                        for (int col = palavra.colIni; col <= palavra.colFim; col++)
+                        FormAcerto dialogAcerto = new FormAcerto();
+                        if (dialogAcerto.ShowDialog(this) == DialogResult.OK)
                         {
-                            for (int row = palavra.rowIni; row <= palavra.rowFim; row++)
+                            int posLetra = 0;
+                            for (int col = palavra.colIni; col <= palavra.colFim; col++)
                             {
-                                var ctrl = palavrasCruzadas.GetControlFromPosition(col, row);
-                                if (ctrl != null)
-                                    ctrl.Text = palavra.palavra.Substring(posLetra, 1);
-                                posLetra++;                                
+                                for (int row = palavra.rowIni; row <= palavra.rowFim; row++)
+                                {
+                                    var ctrl = palavrasCruzadas.GetControlFromPosition(col, row);
+                                    if (ctrl != null)
+                                        ctrl.Text = palavra.palavra.Substring(posLetra, 1);
+                                    posLetra++;
+                                }
                             }
-                        }
-                        acertos++;
-                        if (acertos == 5)
-                        {
-                            MessageBox.Show("Parabéns você revelou todas as palavras! Vamos para a próxima fase!");
-                            ShowProximaFase();
+                            acertos++;
+                            if (acertos == 5)
+                            {
+                                MessageBox.Show("Parabéns você revelou todas as palavras! Vamos para a próxima fase!");
+                                ShowProximaFase();
+                            }
                         }
                     } else
                     {                        
@@ -251,11 +254,6 @@ namespace LonelyWord
             FormMenu fMenu = new FormMenu();
             fMenu.Show();
             this.Hide();
-        }
-
-        private void FormJogo_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
