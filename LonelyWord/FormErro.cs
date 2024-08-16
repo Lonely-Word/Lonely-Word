@@ -12,9 +12,25 @@ namespace LonelyWord
 {
     public partial class FormErro : Form
     {
+        public void SetMsgDica(string Msg, string Dica)
+        {
+            label1.Text = Msg;
+            label2.Text = Dica;
+        }
+
         public FormErro()
         {
             InitializeComponent();
+
+            label1.Text = "Ops! :(";
+            label2.Text = "";
+        }
+        public FormErro(string Msg, string Dica = "")
+        {
+            InitializeComponent();
+
+            label1.Text = Msg;
+            label2.Text = Dica;
         }
     }
 }

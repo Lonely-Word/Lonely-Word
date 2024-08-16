@@ -62,6 +62,9 @@ namespace LonelyWord
         {
             var letra = (Label)sender;
             var palavra = (Palavra)letra.Tag;
+            FormErro dialogErro = new FormErro();
+            FormAcerto dialogAcerto = new FormAcerto();
+
             if (palavra != null)
             {
                 FormPalavra pDialog = new FormPalavra();
@@ -69,7 +72,7 @@ namespace LonelyWord
                 { 
                     if (palavra.palavra.ToUpper() == RemoveAcentos(pDialog.getPalavra().ToUpper()))
                     {
-                        FormAcerto dialogAcerto = new FormAcerto();
+                        dialogAcerto.SetMsg("PARABÉNS VOCÊ ACERTOU!");
                         if (dialogAcerto.ShowDialog(this) == DialogResult.OK)
                         {
                             int posLetra = 0;
@@ -86,12 +89,13 @@ namespace LonelyWord
                             acertos++;
                             if (acertos == 5)
                             {
-                                MessageBox.Show("Parabéns você revelou todas as palavras! Vamos para a próxima fase!");
+                                dialogAcerto.SetMsg("PARABÉNS VOCÊ PASSOU PARA A PRÓXIMA FASE!");
+                                dialogAcerto.ShowDialog(this);
                                 ShowProximaFase();
                             }
                         }
                     } else
-                    {                        
+                    {
                         tentativas--;
                         switch (tentativas)
                         {
@@ -99,7 +103,8 @@ namespace LonelyWord
                                 vida1.Visible = false;
                                 vida2.Visible = false;
                                 vida3.Visible = false;
-                                MessageBox.Show("Não foi desta vez, reveja a história de seu Eduardo e tente novamente!");
+                                dialogErro.SetMsgDica(":( Não foi desta vez!", "Reveja a estória do Sr. Luiz e tente novamente!");
+                                dialogErro.ShowDialog(this);
                                 FormMenu fMenu = new FormMenu();
                                 fMenu.Show();
                                 this.Hide();
@@ -108,13 +113,15 @@ namespace LonelyWord
                                 vida1.Visible = false;
                                 vida2.Visible = false;
                                 vida3.Visible = true;
-                                MessageBox.Show("Ops, errou!");
+                                dialogErro.SetMsgDica("Você errou, pega a dica abaixo:", palavra.dica);
+                                dialogErro.ShowDialog(this);
                                 break;
                             case 2:
                                 vida1.Visible = false;
                                 vida2.Visible = true;
                                 vida3.Visible = true;
-                                MessageBox.Show("Ops, errou!");
+                                dialogErro.SetMsgDica("Você errou, pega a dica abaixo:", palavra.dica);                                
+                                dialogErro.ShowDialog(this);                                    
                                 break;
                             default:
                                 vida1.Visible = true;

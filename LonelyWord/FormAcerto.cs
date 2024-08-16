@@ -12,6 +12,11 @@ namespace LonelyWord
 {
     public partial class FormAcerto : Form
     {
+        public void SetMsg(string Msg)
+        {
+            label1.Text = Msg;
+        }
+
         public FormAcerto()
         {
             InitializeComponent();

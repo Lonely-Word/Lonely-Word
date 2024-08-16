@@ -46,7 +46,7 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(147, 150);
+            this.btnConfirmar.Location = new System.Drawing.Point(333, 145);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(130, 45);
             this.btnConfirmar.TabIndex = 6;
@@ -59,7 +59,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(2, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 66);
+            this.label1.Size = new System.Drawing.Size(797, 66);
             this.label1.TabIndex = 7;
             this.label1.Text = "PARABÉNS VOCÊ ACERTOU!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,11 +70,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(418, 217);
+            this.ClientSize = new System.Drawing.Size(800, 217);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAcerto";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
             this.ResumeLayout(false);
