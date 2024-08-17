@@ -212,6 +212,7 @@ namespace LonelyWord
             int numLetras = 0;
             int numPalavra = 0;
             Label[] letras = new Label[400];
+            Label[] letraDicas = new Label[5];
             foreach (var palavra in PalavrasFase)
             {
                 numPalavra++;
@@ -238,12 +239,26 @@ namespace LonelyWord
                 {
                     for (int row = palavra.rowIni; row <= palavra.rowFim; row++)
                     {                        
-                        letras[numLetras] = new Label();
                         if (posLetra == 0)
                         {
-                            letras[numLetras].Text = numPalavra.ToString();                            
+                            letraDicas[numPalavra-1] = new Label();
+                            letraDicas[numPalavra - 1].BackColor = Color.WhiteSmoke;
+                            letraDicas[numPalavra - 1].Text = numPalavra.ToString();
+                            letraDicas[numPalavra - 1].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            letraDicas[numPalavra - 1].ForeColor = Color.Black;
+                            letraDicas[numPalavra - 1].Dock = DockStyle.Fill;
+                            letraDicas[numPalavra - 1].FlatStyle = FlatStyle.Flat;
+                            letraDicas[numPalavra - 1].Margin = new System.Windows.Forms.Padding(2);
+                            letraDicas[numPalavra - 1].Tag = palavra;
+                            letraDicas[numPalavra - 1].Click += new EventHandler(letraClick);
+
+                            if (palavra.direcao == "Vertical")
+                                palavrasCruzadas.Controls.Add(letraDicas[numPalavra - 1], col, row - 1);
+                            else
+                                palavrasCruzadas.Controls.Add(letraDicas[numPalavra - 1], col - 1, row);                            
                         }
                         posLetra++;
+                        letras[numLetras] = new Label();
                         letras[numLetras].BackColor = Color.Teal;
                         letras[numLetras].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                         letras[numLetras].ForeColor = Color.WhiteSmoke;
@@ -253,8 +268,8 @@ namespace LonelyWord
                         letras[numLetras].Tag = palavra;
                         letras[numLetras].Click += new EventHandler(letraClick);
                         var ctrl = palavrasCruzadas.GetControlFromPosition(col, row);
-                        if (ctrl == null)                        
-                            palavrasCruzadas.Controls.Add(letras[numLetras], col, row);
+                        if (ctrl == null)
+                            palavrasCruzadas.Controls.Add(letras[numLetras], col, row);                            
                         else
                             ctrl.Tag = null;
                         numLetras++;
