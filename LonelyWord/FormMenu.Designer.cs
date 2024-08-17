@@ -134,7 +134,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
-            this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.Shown += new System.EventHandler(this.FormMenu_Shown);
+            this.Leave += new System.EventHandler(this.FormMenu_Leave);
             this.ResumeLayout(false);
 
         }

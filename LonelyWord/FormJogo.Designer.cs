@@ -35,13 +35,12 @@
             this.vida2 = new System.Windows.Forms.PictureBox();
             this.vida1 = new System.Windows.Forms.PictureBox();
             this.palavrasCruzadas = new System.Windows.Forms.TableLayoutPanel();
-            this.digite = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dica5 = new System.Windows.Forms.Label();
             this.dica4 = new System.Windows.Forms.Label();
             this.dica3 = new System.Windows.Forms.Label();
             this.dica2 = new System.Windows.Forms.Label();
             this.dica1 = new System.Windows.Forms.Label();
+            this.dica5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vida3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida1)).BeginInit();
@@ -154,103 +153,96 @@
             this.palavrasCruzadas.Size = new System.Drawing.Size(685, 591);
             this.palavrasCruzadas.TabIndex = 16;
             // 
-            // digite
-            // 
-            this.digite.AutoSize = true;
-            this.digite.BackColor = System.Drawing.SystemColors.Window;
-            this.digite.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.digite.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.digite.Location = new System.Drawing.Point(709, 126);
-            this.digite.Name = "digite";
-            this.digite.Size = new System.Drawing.Size(57, 21);
-            this.digite.TabIndex = 14;
-            this.digite.Text = "DICAS:";
-            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackgroundImage = global::LonelyWord.Properties.Resources.background_dica;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dica5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.dica4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dica3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dica2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dica1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(709, 150);
+            this.tableLayoutPanel1.Controls.Add(this.dica5, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.dica4, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.dica3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.dica2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dica1, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(709, 126);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(287, 567);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(287, 591);
             this.tableLayoutPanel1.TabIndex = 17;
-            // 
-            // dica5
-            // 
-            this.dica5.AutoSize = true;
-            this.dica5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dica5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dica5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dica5.Location = new System.Drawing.Point(3, 148);
-            this.dica5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
-            this.dica5.Name = "dica5";
-            this.dica5.Size = new System.Drawing.Size(281, 407);
-            this.dica5.TabIndex = 4;
-            this.dica5.Text = "label1";
             // 
             // dica4
             // 
             this.dica4.AutoSize = true;
             this.dica4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dica4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dica4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dica4.Location = new System.Drawing.Point(3, 111);
+            this.dica4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dica4.Location = new System.Drawing.Point(3, 153);
             this.dica4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.dica4.Name = "dica4";
             this.dica4.Size = new System.Drawing.Size(281, 25);
             this.dica4.TabIndex = 3;
-            this.dica4.Text = "label1";
+            this.dica4.Text = "Dica 4";
             // 
             // dica3
             // 
             this.dica3.AutoSize = true;
             this.dica3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dica3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dica3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dica3.Location = new System.Drawing.Point(3, 74);
+            this.dica3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dica3.Location = new System.Drawing.Point(3, 116);
             this.dica3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.dica3.Name = "dica3";
             this.dica3.Size = new System.Drawing.Size(281, 25);
             this.dica3.TabIndex = 2;
-            this.dica3.Text = "label1";
+            this.dica3.Text = "Dica 3";
             // 
             // dica2
             // 
             this.dica2.AutoSize = true;
             this.dica2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dica2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dica2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dica2.Location = new System.Drawing.Point(3, 37);
+            this.dica2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dica2.Location = new System.Drawing.Point(3, 79);
             this.dica2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.dica2.Name = "dica2";
             this.dica2.Size = new System.Drawing.Size(281, 25);
             this.dica2.TabIndex = 1;
-            this.dica2.Text = "label1";
+            this.dica2.Text = "Dica 2";
             // 
             // dica1
             // 
             this.dica1.AutoSize = true;
             this.dica1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dica1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dica1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dica1.Location = new System.Drawing.Point(3, 0);
+            this.dica1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dica1.Location = new System.Drawing.Point(3, 42);
             this.dica1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
             this.dica1.Name = "dica1";
             this.dica1.Size = new System.Drawing.Size(281, 25);
             this.dica1.TabIndex = 0;
-            this.dica1.Text = "label1";
+            this.dica1.Text = "Dica1";
+            // 
+            // dica5
+            // 
+            this.dica5.AutoSize = true;
+            this.dica5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dica5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dica5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dica5.Location = new System.Drawing.Point(3, 190);
+            this.dica5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 12);
+            this.dica5.Name = "dica5";
+            this.dica5.Size = new System.Drawing.Size(281, 389);
+            this.dica5.TabIndex = 5;
+            this.dica5.Text = "Dica 5";
             // 
             // FormJogo
             // 
@@ -262,7 +254,6 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.palavrasCruzadas);
-            this.Controls.Add(this.digite);
             this.Controls.Add(this.vida1);
             this.Controls.Add(this.vida2);
             this.Controls.Add(this.tema);
@@ -293,12 +284,11 @@
         private System.Windows.Forms.PictureBox vida2;
         private System.Windows.Forms.PictureBox vida1;
         private System.Windows.Forms.TableLayoutPanel palavrasCruzadas;
-        private System.Windows.Forms.Label digite;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label dica1;
-        private System.Windows.Forms.Label dica5;
         private System.Windows.Forms.Label dica4;
         private System.Windows.Forms.Label dica3;
         private System.Windows.Forms.Label dica2;
+        private System.Windows.Forms.Label dica5;
     }
 }

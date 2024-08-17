@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,6 +14,10 @@ namespace LonelyWord
 {
     public partial class FormMenu : Form
     {
+
+        SoundPlayer player;
+
+
         public FormMenu()
         {
             InitializeComponent();
@@ -22,6 +27,7 @@ namespace LonelyWord
         {
             FormCreditos fCreditos = new FormCreditos();
             fCreditos.Show();
+            player.Stop();
             this.Hide();
         }
 
@@ -29,6 +35,7 @@ namespace LonelyWord
         {
             FormTutorial fTutorial = new FormTutorial();
             fTutorial.Show();
+            player.Stop();
             this.Hide();
         }
 
@@ -36,6 +43,7 @@ namespace LonelyWord
         {   
             FormApresentacao fApresentacao = new FormApresentacao(@"..\..\Resources\cutscene01.mp4", 1);
             fApresentacao.Show();
+            player.Stop();
             this.Hide();
         }
 
@@ -49,9 +57,15 @@ namespace LonelyWord
             Application.Exit();
         }
 
-        private void FormMenu_Load(object sender, EventArgs e)
+        private void FormMenu_Shown(object sender, EventArgs e)
         {
+            player = new SoundPlayer(Properties.Resources.menu);
+            player.Play();
+        }
 
+        private void FormMenu_Leave(object sender, EventArgs e)
+        {
+            player.Stop();
         }
     }
 }

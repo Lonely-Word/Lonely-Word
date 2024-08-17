@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace LonelyWord
         int fase;
         int tentativas = 3;
         int acertos = 0;
+        SoundPlayer player;
 
         private static string RemoveAcentos(string text)
         {
@@ -30,6 +32,14 @@ namespace LonelyWord
                     sbReturn.Append(letter);
             }
             return sbReturn.ToString();
+        }
+
+        private void ShowMenu()
+        {
+            FormMenu fMenu = new FormMenu();
+            fMenu.Show();
+            player.Stop();
+            this.Hide();
         }
 
         private void ShowProximaFase()
@@ -105,9 +115,7 @@ namespace LonelyWord
                                 vida3.Visible = false;
                                 dialogErro.SetMsgDica(":( Não foi desta vez!", "Reveja a estória do Sr. Luiz e tente novamente!");
                                 dialogErro.ShowDialog(this);
-                                FormMenu fMenu = new FormMenu();
-                                fMenu.Show();
-                                this.Hide();
+                                ShowMenu();
                                 break;
                             case 1:
                                 vida1.Visible = false;
@@ -153,6 +161,7 @@ namespace LonelyWord
                     PalavrasFase.Add(new Palavra("MELANCOLIA", "Estado de grande tristeza e desencanto gera. (10 letras)", "Horizontal", 5, 14, 10, 10));
                     PalavrasFase.Add(new Palavra("IDOSO", "Que ou quem tem muitos anos de vida. (5 letras)", "Horizontal", 7, 11, 14, 14));
                     fase = new Fase(1, "Abandono: Solidão, doenças, síndromes.", "Abandono: Solidão, doenças, síndromes.", PalavrasFase);
+                    player = new SoundPlayer(Properties.Resources._125);
                     break;
                 case 2:
                     /* Fase 2 */                    
@@ -161,7 +170,8 @@ namespace LonelyWord
                     PalavrasFase.Add(new Palavra("NETOS", "Descendentes de segundo nível. (5 letras)", "Horizontal", 9, 13, 11, 11));
                     PalavrasFase.Add(new Palavra("FAMILIA", "O conjunto de parentes de uma pessoa. (7 letras)", "Horizontal", 8, 14, 6, 6));
                     PalavrasFase.Add(new Palavra("CUIDADOS", "Que foi ou é objeto de tratamento especial, zelo, bom trato. (8 letras)", "Vertical", 13, 13, 4, 11));
-                    fase = new Fase(2, "Estrutura familiar: Direitos e deveres.", "Estrutura familiar: Direitos e deveres.", PalavrasFase);                    
+                    fase = new Fase(2, "Estrutura familiar: Direitos e deveres.", "Estrutura familiar: Direitos e deveres.", PalavrasFase);
+                    player = new SoundPlayer(Properties.Resources._125);
                     break;
                 case 3:
                     /* Fase 3 */                    
@@ -171,26 +181,30 @@ namespace LonelyWord
                     PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros. (10 letras)", "Horizontal", 5, 14, 11, 11));
                     PalavrasFase.Add(new Palavra("GRATUIDADE", "Condição ou estado do que é oferecido de graça. (10 letras)", "Vertical", 12, 12, 9, 18));
                     fase = new Fase(3, "Desafios da 3° idade: Qualidade de vida.", "Desafios da 3° idade: Qualidade de vida.", PalavrasFase);
+                    player = new SoundPlayer(Properties.Resources._34);
                     break;
                 case 4:
                     /* Fase 4 */                     
-                    PalavrasFase.Add(new Palavra("MULTIRAO", "Mobilização coletiva de pessoas que, realizam um trabalho em conjunto para alcançar um objetivo comum. (8 letras)", "Horizontal", 5, 12, 13, 13));
+                    PalavrasFase.Add(new Palavra("MUTIRAO", "Mobilização coletiva de pessoas que, realizam um trabalho em conjunto para alcançar um objetivo comum. (7 letras)", "Horizontal", 5, 11, 13, 13));
                     PalavrasFase.Add(new Palavra("AMIZADE", "Sentimento de afeto, carinho e estima entre pessoas. (7 letras)", "Horizontal", 5, 11, 4, 4));
                     PalavrasFase.Add(new Palavra("SUPERACAO", "A ação de vencer desafios, ultrapassar obstáculos e superar dificuldades. (9 letras)", "Vertical", 11, 11, 8, 16));
                     PalavrasFase.Add(new Palavra("ASSISTENCIA", "Ação de ajudar, apoiar ou fornecer auxílio a alguém. (11 letras)", "Vertical", 9, 9, 4, 14));
                     PalavrasFase.Add(new Palavra("AJUDA", "Ação de prestar auxilio a alguém. (5 letras)", "Vertical", 6, 6, 11, 15));
-                    fase = new Fase(4, "Quebrando barreiras: Amizade, superação e respeito.", "Quebrando barreiras: Amizade, superação e respeito.", PalavrasFase);                    
+                    fase = new Fase(4, "Quebrando barreiras: Amizade, superação e respeito.", "Quebrando barreiras: Amizade, superação e respeito.", PalavrasFase);
+                    player = new SoundPlayer(Properties.Resources._34);
                     break;
                 case 5:
                     /* Fase 5 */
                     PalavrasFase.Add(new Palavra("IDOSO", "Que ou quem tem muitos anos de vida. (5 letras)", "Horizontal", 9, 13, 8, 8));
                     PalavrasFase.Add(new Palavra("FAMILIA", "O conjunto de parentes de uma pessoa. (7 letras)", "Vertical", 14, 14, 10, 16));
                     PalavrasFase.Add(new Palavra("SUPERACAO", "A ação de vencer desafios, ultrapassar obstáculos e superar dificuldades. (9 letras)", "Horizontal", 7, 15, 11, 11));
-                    PalavrasFase.Add(new Palavra("CUIDADO", "Que foi ou é objeto de tratamento especial, zelo, bom trato. (7 letras)", "Horizontal", 4, 10, 5, 5));
+                    PalavrasFase.Add(new Palavra("CUIDADOS", "Que foi ou é objeto de tratamento especial, zelo, bom trato. (8 letras)", "Horizontal", 4, 11, 5, 5));
                     PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros. (10 letras)", "Vertical", 10, 10, 2, 11));
+                    player = new SoundPlayer(Properties.Resources._125);
                     fase = new Fase(5, "Valorize seu idoso, amanhã será você o idoso.", "Valorize seu idoso, amanhã será você o idoso.", PalavrasFase);
                     break;                                                        
             }
+            player.Play();
 
             capitulo.Text = "Capítulo " + this.fase.ToString();
             tema.Text = fase.tema;
@@ -258,9 +272,7 @@ namespace LonelyWord
 
         private void FormJogo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormMenu fMenu = new FormMenu();
-            fMenu.Show();
-            this.Hide();
+            ShowMenu();
         }
     }
 }

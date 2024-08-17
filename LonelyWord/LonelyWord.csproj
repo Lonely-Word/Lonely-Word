@@ -206,6 +206,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lonelyword.ico" />
+    <None Include="Resources\background-dica.jpg" />
+    <None Include="Resources\background-dica.png.jpg" />
+    <None Include="Resources\menu.wav" />
+    <None Include="Resources\125.wav" />
+    <None Include="Resources\34.wav" />
     <None Include="Resources\tutorial06.png" />
     <None Include="Resources\tutorial05.png" />
     <None Include="Resources\tutorial04.png" />
