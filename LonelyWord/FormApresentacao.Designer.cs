@@ -63,6 +63,7 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1008, 729);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // FormApresentacao
@@ -80,6 +81,7 @@
             this.Text = "Lonely Word";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormApresentacao_FormClosed);
             this.Load += new System.EventHandler(this.FormApresentacao_Load);
+            this.Leave += new System.EventHandler(this.FormApresentacao_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 

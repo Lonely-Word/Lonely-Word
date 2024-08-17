@@ -272,6 +272,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lonely Word";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormJogo_FormClosed);
+            this.Leave += new System.EventHandler(this.FormJogo_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.vida3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vida1)).EndInit();

@@ -65,6 +65,7 @@ namespace LonelyWord
             }
             FormApresentacao fApresentacao = new FormApresentacao(cutscene, this.fase+1);
             fApresentacao.Show();
+            player.Stop();
             this.Hide();
         }
 
@@ -175,11 +176,11 @@ namespace LonelyWord
                     break;
                 case 3:
                     /* Fase 3 */                    
-                    PalavrasFase.Add(new Palavra("SAUDE", "Voto que se faz a alguém que espirra. (5 letras)", "Horizontal", 8, 12, 18, 18));
-                    PalavrasFase.Add(new Palavra("APOSENTADORIA", "A remuneração recebida mensalmente pelo trabalhador aposentado. (13 letras)", "Vertical", 7, 7, 0, 12));
-                    PalavrasFase.Add(new Palavra("REMEDIOS", "Substância ou recurso utilizado para combater uma dor, uma doença. (8 letras)", "Vertical", 14, 14, 8, 15));
-                    PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros. (10 letras)", "Horizontal", 5, 14, 11, 11));
-                    PalavrasFase.Add(new Palavra("GRATUIDADE", "Condição ou estado do que é oferecido de graça. (10 letras)", "Vertical", 12, 12, 9, 18));
+                    PalavrasFase.Add(new Palavra("SAUDE", "Voto que se faz a alguém que espirra. (5 letras)", "Horizontal", 8, 12, 19, 19));
+                    PalavrasFase.Add(new Palavra("APOSENTADORIA", "A remuneração recebida mensalmente pelo trabalhador aposentado. (13 letras)", "Vertical", 7, 7, 1, 13));
+                    PalavrasFase.Add(new Palavra("REMEDIOS", "Substância ou recurso utilizado para combater uma dor, uma doença. (8 letras)", "Vertical", 14, 14, 9, 16));
+                    PalavrasFase.Add(new Palavra("PRIORIDADE", "Possibilidade legal de passar à frente dos outros. (10 letras)", "Horizontal", 5, 14, 12, 12));
+                    PalavrasFase.Add(new Palavra("GRATUIDADE", "Condição ou estado do que é oferecido de graça. (10 letras)", "Vertical", 12, 12, 10, 19));
                     fase = new Fase(3, "Desafios da 3° idade: Qualidade de vida.", "Desafios da 3° idade: Qualidade de vida.", PalavrasFase);
                     player = new SoundPlayer(Properties.Resources._34);
                     break;
@@ -288,6 +289,11 @@ namespace LonelyWord
         private void FormJogo_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowMenu();
+        }
+
+        private void FormJogo_Leave(object sender, EventArgs e)
+        {
+            player.Stop();
         }
     }
 }

@@ -65,5 +65,18 @@ namespace LonelyWord
         {
 
         }
+
+        private void FormApresentacao_Leave(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+        }
+
+        private void axWindowsMediaPlayer1_PlayStateChange(object sender, _WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            if (axWindowsMediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {
+                btnAvancar_Click(new object(), new EventArgs());
+            }
+        }
     }
 }
